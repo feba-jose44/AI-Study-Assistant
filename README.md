@@ -1,9 +1,22 @@
-# AI Study Assistant
+# 🤖 AI Study Assistant
 
-An AI-powered study assistant built with Python and Azure AI.
+An AI-powered study assistant built using Python and Azure AI.
 
-## Features
-- Summarize notes
-- Generate quizzes
-- Explain concepts
-- More features coming soon!
+## 🚀 Features
+
+- 📄 Upload study notes
+- 📝 Generate summaries
+- ❓ Create quizzes
+- 💡 Explain difficult concepts
+- 🔊 Text-to-speech (coming soon)
+
+## 🛠️ Tech Stack
+
+- Python
+- Streamlit
+- Azure AI
+- Git/GitHub
+
+## 📌 Project Status
+
+Currently in development 🚧
