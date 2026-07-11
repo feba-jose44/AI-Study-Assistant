@@ -1,5 +1,6 @@
 import streamlit as st
-from PyPDF2 import PdfReader
+from pdf_reader import read_pdf
+from ai_service import summarize 
 
 # -------------------------------
 # Page Configuration
@@ -38,13 +39,7 @@ if uploaded_file is not None:
     # Read PDF only if the uploaded file is a PDF
     if uploaded_file.type == "application/pdf":
 
-        reader = PdfReader(uploaded_file)
-
-        for page in reader.pages:
-            text = page.extract_text()
-
-            if text:
-                all_text += text + "\n"
+        all_text = read_pdf(uploaded_file)
 
 st.divider()
 
@@ -66,7 +61,18 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
     if st.button("📝 Generate Summary"):
-        perform_action("Generating summary")
+        if uploaded_file is None:
+            st.warning("Please upload a file first.")
+        else:
+            summary = summarize(all_text)
+            st.subheader("Summary")
+            st.text_area(
+                "AI Summary",
+                summary,
+                height=200
+            )
+
+            st.write(summary)
 
 with col2:
     if st.button("❓ Generate Quiz"):
