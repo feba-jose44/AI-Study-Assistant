@@ -11,6 +11,13 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 # Create Gemini client
 client = genai.Client(api_key=API_KEY)
 
+def ask_gemini(prompt):
+    response = client.models.generate_content(
+        model="gemini-3.5-flash",
+        contents=prompt
+    )
+
+    return response.text
 
 def summarize(text):
 
@@ -30,9 +37,26 @@ def summarize(text):
     {text}
     """
 
-    response = client.models.generate_content(
-        model="gemini-3.5-flash",
-        contents=prompt
-    )
+    return ask_gemini(prompt)
 
-    return response.text
+def generate_quiz(text):
+
+    prompt = f"""
+    You are an expert study assistant.
+
+    Based ONLY on the notes below, generate a quiz.
+
+    Requirements:
+    - 5 multiple-choice questions (4 options each)
+    - 3 short-answer questions
+    - 2 long-answer questions
+    - Provide the correct answer after each question
+    - Do not ask questions that are not covered in the notes
+    - Format the quiz neatly using headings
+
+    Notes:
+
+    {text}
+    """
+
+    return ask_gemini(prompt)

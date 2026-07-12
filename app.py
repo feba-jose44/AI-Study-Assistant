@@ -1,6 +1,6 @@
 import streamlit as st
 from pdf_reader import read_pdf
-from ai_service import summarize 
+from ai_service import generate_quiz, summarize 
 
 # -------------------------------
 # Page Configuration
@@ -76,7 +76,16 @@ with col1:
 
 with col2:
     if st.button("❓ Generate Quiz"):
-        perform_action("Generating quiz")
+        if uploaded_file is None:
+            st.warning("Please upload a file first.")
+        else:
+            quiz = generate_quiz(all_text)
+            st.subheader("Quiz")
+            st.text_area(
+                "AI Generated Quiz",
+                quiz,
+                height=400
+            )
 
 with col3:
     if st.button("💬 Ask Questions"):

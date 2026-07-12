@@ -1,22 +1,23 @@
-# 🤖 AI Study Assistant
+# AI Study Assistant
 
-An AI-powered study assistant built using Python and Azure AI.
+An AI-powered study assistant built with Python and Streamlit.
 
-## 🚀 Features
+## Features
+- Upload PDF notes
+- Extract text from PDFs
+- Generate AI-powered summaries using Google Gemini
+- Clean and user-friendly interface
 
-- 📄 Upload study notes
-- 📝 Generate summaries
-- ❓ Create quizzes
-- 💡 Explain difficult concepts
-- 🔊 Text-to-speech (coming soon)
-
-## 🛠️ Tech Stack
-
+## Tech Stack
 - Python
 - Streamlit
-- Azure AI
-- Git/GitHub
+- Google Gemini API
+- PyPDF2
+- python-dotenv
 
-## 📌 Project Status
-
-Currently in development 🚧
+## Future Features
+- AI Quiz Generator
+- Flashcards
+- Translation
+- Ask Questions about Notes
+- Text-to-Speech
