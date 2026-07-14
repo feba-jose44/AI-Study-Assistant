@@ -1,6 +1,6 @@
 import streamlit as st
 from pdf_reader import read_pdf
-from ai_service import generate_quiz, summarize 
+from ai_service import generate_quiz, summarize, answer_question
 
 # -------------------------------
 # Page Configuration
@@ -88,8 +88,20 @@ with col2:
             )
 
 with col3:
+    question = st.text_input("Ask a question about your notes:")
     if st.button("💬 Ask Questions"):
-        perform_action("Opening Q&A")
+        if uploaded_file is None:
+            st.warning("Please upload a file first.")
+        elif not question:
+            st.warning("Please enter a question.")
+        else:
+            answer = answer_question(all_text, question)
+            st.subheader("Answer")
+            st.text_area(
+                "AI Answer",
+                answer,
+                height=200
+            )
 
 if st.button("🌍 Translate Notes"):
     perform_action("Translating notes")

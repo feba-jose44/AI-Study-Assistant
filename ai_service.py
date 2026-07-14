@@ -60,3 +60,26 @@ def generate_quiz(text):
     """
 
     return ask_gemini(prompt)
+def answer_question(text, question):
+
+    prompt = f"""
+    You are an expert study assistant.
+
+    Answer the student's question using ONLY the uploaded notes.
+
+    Requirements:
+    - Answer in simple language
+    - Use bullet points where appropriate
+    - Explain in a detailed but easy-to-understand manner
+    - If the answer is not present in the notes, clearly say:
+      "This information is not available in the uploaded notes."
+    - Do not make up information.
+
+    Notes:
+    {text}
+
+    Question:
+    {question}
+    """
+
+    return ask_gemini(prompt)
