@@ -60,6 +60,7 @@ def generate_quiz(text):
     """
 
     return ask_gemini(prompt)
+
 def answer_question(text, question):
 
     prompt = f"""
@@ -83,3 +84,23 @@ def answer_question(text, question):
     """
 
     return ask_gemini(prompt)
+
+def translate_notes(text, language):
+
+    prompt = f"""
+    You are an expert study assistant.
+
+    Translate the following notes into {language}.
+
+    Requirements:
+    - Translate ONLY the uploaded notes.
+    - Preserve the original meaning and context.
+    - Keep all headings, bullet points, and formatting as similar as possible.
+    - Do not add, remove, or invent information.
+    - If a technical term is commonly left in English, you may keep it.
+    Notes:
+
+    {text}
+    """
+    return ask_gemini(prompt)
+    

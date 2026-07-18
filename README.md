@@ -6,6 +6,8 @@ An AI-powered study assistant built with Python and Streamlit.
 - Upload PDF notes
 - Extract text from PDFs
 - Generate AI-powered summaries using Google Gemini
+- Generate AI-powered quiz using Google Gemini
+- Generate AI-powered answer questions feature using Google Gemini
 - Clean and user-friendly interface
 
 ## Tech Stack
@@ -16,8 +18,6 @@ An AI-powered study assistant built with Python and Streamlit.
 - python-dotenv
 
 ## Future Features
-- AI Quiz Generator
 - Flashcards
 - Translation
-- Ask Questions about Notes
 - Text-to-Speech

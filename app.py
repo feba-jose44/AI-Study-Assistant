@@ -1,6 +1,6 @@
 import streamlit as st
 from pdf_reader import read_pdf
-from ai_service import generate_quiz, summarize, answer_question
+from ai_service import generate_quiz, summarize, answer_question, translate_notes
 
 # -------------------------------
 # Page Configuration
@@ -72,8 +72,6 @@ with col1:
                 height=200
             )
 
-            st.write(summary)
-
 with col2:
     if st.button("❓ Generate Quiz"):
         if uploaded_file is None:
@@ -103,8 +101,23 @@ with col3:
                 height=200
             )
 
+language = st.selectbox(
+    "Select a language for translation:",
+    ("English", "Hindi", "Telugu","Spanish", "French", "German", "Chinese")
+)
 if st.button("🌍 Translate Notes"):
-    perform_action("Translating notes")
+    if uploaded_file is None:
+        st.warning("Please upload a file first.")
+    else:
+        with st.spinner("Translating notes..."):
+            translation = translate_notes(all_text, language)
+        st.subheader(f"Translated Notes ({language})")
+        st.text_area(
+            "AI Translated Notes",
+            translation,
+            height=300
+        )
+
 
 st.divider()
 
