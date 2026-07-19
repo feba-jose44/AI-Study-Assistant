@@ -12,12 +12,19 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=API_KEY)
 
 def ask_gemini(prompt):
-    response = client.models.generate_content(
+    try:
+        response = client.models.generate_content(
         model="gemini-3.5-flash",
         contents=prompt
     )
 
-    return response.text
+        return response.text
+    except Exception as e:
+        return (
+            "S⚠️orry, I couldn't process your request right now.\n\n"
+            f"Technical details: {e}"
+        )
+
 
 def summarize(text):
 
