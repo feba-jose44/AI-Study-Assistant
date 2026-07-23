@@ -123,30 +123,6 @@ The application will open in your browser.
 
 ---
 
-## 📸 Screenshots
-
-### Home Page
-
-> Add a screenshot here.
-
-### Summary Generation
-
-> Add a screenshot here.
-
-### Quiz Generation
-
-> Add a screenshot here.
-
-### Ask Questions
-
-> Add a screenshot here.
-
-### Translation
-
-> Add a screenshot here.
-
----
-
 ## 🔒 Environment Variables
 
 This project uses the Google Gemini API.
