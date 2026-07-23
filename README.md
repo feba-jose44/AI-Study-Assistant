@@ -146,9 +146,6 @@ Your API key is stored securely in a `.env` file and is **not** committed to Git
 
 **Feba Jose**
 
-B.Tech Computer Science Engineering  
-CMR College of Engineering & Technology
-
 ---
 
 ## ⭐ Acknowledgements
@@ -156,6 +153,7 @@ CMR College of Engineering & Technology
 - Streamlit
 - Google Gemini API
 - PyPDF2
+- And ofcourse to all those people who are making the world a better place by helping students to ace their exams.
 
 ---
 
